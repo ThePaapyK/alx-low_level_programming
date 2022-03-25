@@ -15,7 +15,7 @@ char c = 'a';
 
 while (c <= 'z')
 {
-if (c != 5 || c != 17)
+if (c != 'e' || c != 'q')
 {
 putchar(c);
 }
