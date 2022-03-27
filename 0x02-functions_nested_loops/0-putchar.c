@@ -1,5 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include "main.h"
 
 /**
  *main - main block
@@ -8,6 +7,13 @@
 
 int main(void)
 {
-printf("_putchar\n");
+char alx_school[] = "_putchar";
+int i = 0;
+while (alx_school[i] != '\0')
+{
+_putchar(alx_school[i]);
+i++;
+}
+_putchar('\n');
 return (0);
 }
