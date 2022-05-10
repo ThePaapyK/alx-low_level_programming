@@ -1,8 +1,9 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include "main.h"
 
 int main(void)
 {
-  printf("Hello world!\n");
+  print_alphabet();
+  _putchar('c');
+  _putchar('\n');
   return 0;
 }
