@@ -21,7 +21,7 @@ for (b = n; b <= '9'; b++)
 {
 putchar(a);
 putchar(b);
-if (a < '8' && b < '9')
+if (a < '8' || b < '9')
 {
 putchar(44);
 putchar(32);
