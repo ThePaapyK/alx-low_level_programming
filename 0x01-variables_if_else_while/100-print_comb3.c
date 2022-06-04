@@ -12,20 +12,19 @@ int main(void)
 {
 int a;
 int b;
-a = 0;
-b = 1;
-while (a < '9')
+int n;
+n = '1'; 
+a = '0';
+for (a = '0'; a < '9'; a++)
 {
-while (b <= '9')
+for (b = n; b <= '9'; b++)
 {
 putchar(a);
 putchar(b);
 putchar(44);
 putchar(32);
-b++;
 }
-a++;
-b++;
+n++;
 }
 putchar('\n');
 return (0);
