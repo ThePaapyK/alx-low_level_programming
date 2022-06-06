@@ -29,8 +29,8 @@ int main(void)
 						putchar(32);
 						putchar(a);
 						putchar(b);
-
-			      		 if ((c < '9' || d < '8') || (a < '9' || b < '9'))
+							
+						if ((c < '9' || d < '8') || (a < '9' || b < '9'))
 						{
 							putchar(44);
 							putchar(32);
