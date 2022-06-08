@@ -16,7 +16,8 @@ int main(void)
 	for (n = 0; n < 50; n++)
 	{
 		a = m + o;
-		printf("%ld", m);
+
+		printf("%ld", a);
 
 		if (n < 49)
 		{
