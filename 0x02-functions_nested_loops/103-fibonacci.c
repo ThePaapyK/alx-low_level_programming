@@ -8,27 +8,23 @@
 
 int main(void)
 {
-
+	long int n = 0;
 	long int m = 1;
 	long int o = 0;
-	long int a = 1;
+	long int a;
 
 	while (a <= 4000000)
 	{
 		a = m + o;
 		if (a % 2 == 0)
 		{
-			printf("%ld", a);
+			n = n + a;
 
-			if (a < 4000000)
-			{
-				printf(",");
-				printf(" ");
-			}
 		}
-		m = a;
+
 		o = m;
+		m = a;
 	}
-	printf("\n");
+	printf("%ld\n", n);
 	return (0);
 }
