@@ -15,19 +15,10 @@ int main(void)
 	{
 		if (((n % 3) == 0) || ((n % 5) == 0))
 		{
-			printf("%d", n);
-
-			if (n < 1023)
-			{
-				printf(",");
-				printf(" ");
-			}
-
-
 			m = m + n;
 		}
 	}
-	printf("\n");
+
 	printf("%d\n", m);
 
 	return (0);
