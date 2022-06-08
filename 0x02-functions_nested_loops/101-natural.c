@@ -2,11 +2,11 @@
 #include <stdlib.h>
 
 /**
- * natural - prints multiples of 3 and 5 below 1024
- *
+ * main - prints multiples of 3 and 5 below 1024
+ *Return: 0
  */
 
-void natural(void)
+int main(void)
 {
 	int n;
 	int m = 0;
@@ -29,4 +29,6 @@ void natural(void)
 	}
 	printf("\n");
 	printf("%d\n", m);
+
+	return (0);
 }
