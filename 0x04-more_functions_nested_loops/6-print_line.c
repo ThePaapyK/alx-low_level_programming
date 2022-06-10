@@ -15,7 +15,10 @@ for (c = 0; c <= n; c++)
 {
 _putchar('_');
 }
-
-}
 _putchar('\n');
+}
+else
+{
+_putchar('\n');
+}
 }
