@@ -2,6 +2,7 @@
 
 /**
  * _strncat - catenates
+ * @n: maximum number of bytes
  * @dest: pointer to first string
  * @src: pointer to second string
  * Return: pointer to resulting dest
