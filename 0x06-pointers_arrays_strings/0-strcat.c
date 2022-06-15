@@ -1,13 +1,13 @@
 #include "main.h"
 
 /**
- * _strncat - catenates
+ * _strcat - catenates
  * @dest: pointer to first string
  * @src: pointer to second string
  * Return: pointer to resulting dest
  */
 
-char *_strncat(char *dest, char *src)
+char *_strcat(char *dest, char *src)
 {
 	int i, l;
 
