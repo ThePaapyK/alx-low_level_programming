@@ -26,7 +26,7 @@ int _strcmp(char *s1, char *s2)
 	{
 		return (15);
 	}
-	else if (i = j)
+	else if (i == j)
 	{
 		return (0);
 	}
