@@ -26,6 +26,7 @@ char *_strpbrk(char *s, char *accept)
 
 				a = &(s[i]);
 				break;
+				return (a);
 			}
 		}
 		if (count > 0)
@@ -33,12 +34,5 @@ char *_strpbrk(char *s, char *accept)
 			break;
 		}
 	}
-	if (s[i] == '\0')
-	{
-		return (NULL);
-	}
-	else
-	{
-		return (a);
-	}
+	return (0);
 }
