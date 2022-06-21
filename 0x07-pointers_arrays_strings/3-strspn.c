@@ -11,6 +11,9 @@
 char *_strspn(char *s, char *accept)
 {
 	int i, j;
+	int *p;
+	
+	p = &a;
 
 	int a = 0;
 
@@ -27,5 +30,5 @@ char *_strspn(char *s, char *accept)
 		if (accept[j] == '\0')
 			break;
 	}
-	return (a);
+	return (p);
 }
