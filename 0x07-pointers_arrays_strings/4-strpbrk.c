@@ -33,5 +33,12 @@ char *_strpbrk(char *s, char *accept)
 			break;
 		}
 	}
-	return (a);
+	if (s[i] == '\0')
+	{
+		return (NULL);
+	}
+	else
+	{
+		return (a);
+	}
 }
