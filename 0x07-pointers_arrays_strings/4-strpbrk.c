@@ -34,5 +34,5 @@ char *_strpbrk(char *s, char *accept)
 			break;
 		}
 	}
-	return (0);
+	return (NULL);
 }
