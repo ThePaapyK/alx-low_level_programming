@@ -29,9 +29,9 @@ char *_strstr(char *haystack, char *needle)
 		}
 		b++;
 
-		if (count == j)
+		if (count == j - 1)
 		{
-			p = &(haystack[j - count - 1]);
+			p = &(haystack[j - count]);
 			break;
 		}
 	}
