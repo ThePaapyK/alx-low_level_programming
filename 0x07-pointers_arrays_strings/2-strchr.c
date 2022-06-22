@@ -23,7 +23,7 @@ char *_strchr(char *s, char c)
 			p = &(s[i]);
 			break;
 		}
-		count++;
+		++count;
 
 	}
 
