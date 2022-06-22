@@ -14,8 +14,8 @@ void print_diagsums(int *a, int size)
 {
 	int i, j;
 
-	long int sum = 0;
-	long int add = 0;
+	long int sum = a[i][j];
+	long int add = a[i][j];
 
 	for (i = 0; i < size; i++)
 	{
@@ -23,12 +23,12 @@ void print_diagsums(int *a, int size)
 		{
 			if (i == j)
 			{
-				sum = sum + a[i][j];
+				sum++;
 			}
 
 			if (j == size - i - 1)
 			{
-				add = add + a[i][j];
+				add++;
 			}
 		}
 	}
