@@ -27,7 +27,7 @@ char *_strchr(char *s, char c)
 
 	}
 
-	if (s[i] == '\0' && c != '\0')
+	if (s[i] == '\0')
 	{
 		p = &(s[i]);
 	}
