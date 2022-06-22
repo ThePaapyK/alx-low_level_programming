@@ -13,6 +13,8 @@ char *_strchr(char *s, char c)
 	int i;
 	char *p;
 
+	int count = 1;
+
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
@@ -21,10 +23,16 @@ char *_strchr(char *s, char c)
 			p = &(s[i]);
 			break;
 		}
+		++count;
 
 	}
 
-	if (s[i] == '\0' && c != '\0')
+	if (s[i] == '\0')
+	{
+		p = &(s[i]);
+	}
+
+	if (count == i)
 	{
 		return (0);
 	}
@@ -32,4 +40,5 @@ char *_strchr(char *s, char c)
 	{
 		return (p);
 	}
+
 }
