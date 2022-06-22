@@ -12,25 +12,26 @@
 
 void print_diagsums(int *a, int size)
 {
-	int i, j;
+	int i, sum, sizer;
 
-	long int sum = a[i][j];
-	long int add = a[i][j];
-
-	for (i = 0; i < size; i++)
+	i = 0;
+	sum = 0;
+	sizer = size * size;
+	while (i < sizer)
 	{
-		for (j = 0; j < size; j++)
-		{
-			if (i == j)
-			{
-				sum++;
-			}
-
-			if (j == size - i - 1)
-			{
-				add++;
-			}
-		}
+		if (i % (size + 1) == 0)
+			sum += a[i];
+		i++;
 	}
-	printf("%ld, %ld", sum, add);
+	printf("%d, ", sum);
+
+	sum = 0;
+	i = 0;
+	while (i < sizer)
+	{
+		if (i % (size - 1) == 0 && i != (sizer - 1) && i != 0)
+			sum += a[i];
+		i++;
+	}
+	printf("%d\n", sum);
 }
