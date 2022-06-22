@@ -13,7 +13,7 @@ char *_strchr(char *s, char c)
 	int i;
 	char *p;
 
-	int count = 0;
+	int count = 1;
 
 
 	for (i = 0; s[i] != '\0'; i++)
