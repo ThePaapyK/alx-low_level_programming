@@ -5,6 +5,8 @@
 * @n: number to be checked
 * Return: 1 if prime, 0 if otherwise
 */
+int _sqrt(int x, int i);
+int Effz(int a, int b);
 
 int is_prime_number(int n)
 {
