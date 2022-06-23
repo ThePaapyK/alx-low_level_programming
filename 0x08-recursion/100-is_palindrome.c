@@ -9,14 +9,18 @@
 int is_palindrome(char *s)
 {
 	int c = _strlen_recursion(s);
-	
+
 	if (*s == '\0')
 	{
 		return (0);
 	}
-	if (s[0] == s[c -1])
+	if (s[0] == s[c - 1])
 	{
 		return (1);
+	}
+	else
+	{
+		return (0);
 	}
 	c--;
 	return (is_palindrome(s + 1));
