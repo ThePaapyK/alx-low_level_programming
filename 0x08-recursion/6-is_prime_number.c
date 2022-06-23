@@ -1,12 +1,15 @@
 #include "main.h"
 
+int _sqrt(int x, int i);
+int Effz(int a, int b);
+
 /**
-* is_prime_number -  returns 1 if the input integer is a prime number, otherwise return 0.
+* is_prime_number -  returns 1 if the input integer is a prime number,
+* otherwise return 0.
 * @n: number to be checked
 * Return: 1 if prime, 0 if otherwise
 */
-int _sqrt(int x, int i);
-int Effz(int a, int b);
+
 
 int is_prime_number(int n)
 {
