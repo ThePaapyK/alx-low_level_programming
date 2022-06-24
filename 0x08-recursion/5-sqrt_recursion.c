@@ -24,15 +24,9 @@ int _sqrt_recursion(int n)
 int _sqrt(int n, int i)
 {
 	if (i * i == n)
-	{
 		return (i);
-	}
 	else if (i * i < n)
-	{
-		return (_sqrt(n, i));
-	}
+		return (_sqrt(n, i + 1));
 	else
-	{
 		return (-1);
-	}
 }
