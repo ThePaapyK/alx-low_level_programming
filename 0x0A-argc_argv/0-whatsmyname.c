@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
 * main - main block
@@ -9,7 +10,9 @@
 
 int main(int argc, char **argv)
 {
-	_putchar(*argv);
+	(void) argc;
+	
+	printf("%d\n", *argv);
 	
 	return (0);
 }
