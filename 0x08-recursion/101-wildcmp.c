@@ -1,4 +1,6 @@
-#include "main.h"
+#include "main.h"int findsrc(char *s, char c, int i, int p);
+
+int findsrc(char *s, char c, int i, int p);
 
 /**
  * wildcmp - compare two strings with "wildcard expansion" capabilities
