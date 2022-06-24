@@ -1,5 +1,5 @@
 #include "main.h"
-
+#include <stdio.h>
 /**
 * main - main block
 * @argc: number of command line arguments
@@ -10,8 +10,8 @@
 int main(int argc, char *argv[])
 {
 	(void) argv;
-	
-	_putchar(argc - 1);
-	
+
+	printf("%d\n", argc - 1);
+
 	return (0);
 }
