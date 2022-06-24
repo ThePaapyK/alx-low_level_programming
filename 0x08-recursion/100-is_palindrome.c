@@ -1,5 +1,6 @@
 #include "main.h"
 
+int pali(char *s, int c);
 /**
 * is_palindrome - checks if a string is a palindrome
 * @s: string
@@ -10,20 +11,9 @@ int is_palindrome(char *s)
 {
 	int c = _strlen_recursion(s);
 
-	if (*s == '\0')
-	{
-		return (0);
-	}
-	if (*s == s[c - 1])
-	{
-		return (1);
-	}
-	else
-	{
-		return (0);
-	}
-	c--;
-	return (is_palindrome(s + 1));
+	
+	int c = _strlen_recursion(s);
+	return (pali(s, c));
 }
 
 /**
@@ -43,4 +33,25 @@ int _strlen_recursion(char *s)
 	c = 1 +  _strlen_recursion(s + 1);
 
 	return (c);
+}
+
+
+/**
+ * pali - recursive check of palindrome
+ * @s: string
+ * @c: length of string
+ * Return: 1 if palindrome, 0 if not
+ */
+
+int pali(char *s, int c)
+{
+	if (*s == *(s + c - 1))
+	{
+		if (c <= 0)
+			return (1);
+		else
+			return (pali(++s, c - 2));
+	}
+	else
+		return (0);
 }
