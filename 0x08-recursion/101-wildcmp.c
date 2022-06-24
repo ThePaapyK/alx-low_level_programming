@@ -1,4 +1,4 @@
-#include "main.h"int findsrc(char *s, char c, int i, int p);
+#include "main.h"
 
 int findsrc(char *s, char c, int i, int p);
 
