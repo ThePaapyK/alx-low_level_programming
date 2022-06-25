@@ -23,6 +23,8 @@ int main(int argc, char **argv)
 			mul *= atoi(argv[i]);
 		}
 		printf("%d\n", mul);
+
+		return (0);
 	}
 	else
 	{
@@ -31,5 +33,5 @@ int main(int argc, char **argv)
 		return (1);
 	}
 
-	return (0);
+
 }
