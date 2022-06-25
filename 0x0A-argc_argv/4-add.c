@@ -21,7 +21,8 @@ int main(int argc, char **argv)
 	{
 		for (i = 1; i < argc; i++)
 		{
-			if ((atoi(argv[i]) <= 0) || ((strlen(argv[i])) - 1 != log10(atoi(argv[i])) + 1))
+			int n = atoi(argv[i]);
+			if ((n <= 0) || (strlen(argv[i]) - 1 != log10(n) + 1))
 			{
 				printf("Error\n");
 				return (1);
