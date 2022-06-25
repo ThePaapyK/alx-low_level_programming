@@ -22,6 +22,7 @@ int main(int argc, char **argv)
 		for (i = 1; i < argc; i++)
 		{
 			int n = atoi(argv[i]);
+
 			if (n <= 0)
 			{
 				printf("Error\n");
