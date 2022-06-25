@@ -15,7 +15,7 @@ int main(int argc, char **argv)
 
 	int add = 0;
 
-	if (argc > 1)
+	if (argc > 2)
 	{
 		for (i = 1; i < argc; i++)
 		{
@@ -31,7 +31,10 @@ int main(int argc, char **argv)
 			}
 		}
 
-		printf("%d\n", add);
+		if ( i == argc)
+		{
+			printf("%d\n", add);
+		}
 	}
 	else if (argc == 1)
 	{
