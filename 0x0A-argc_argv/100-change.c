@@ -11,24 +11,42 @@
 
 int main(int argc, char **argv)
 {
-	if (argc == 2)
-	{
-		if (atoi(argv[1]) > 0)
-		{
-			int cents = 100 * atoi(argv[1]);
+	int amount, count;
+	unsigned int i;
+	char *ptr;
+	int cents[] = {25, 10, 5, 2};
 
-			printf("%d\n", cents);
-		}
-		else
+	if (argc != 2)
+	{
+		printf("Error\n");
+		return (1);
+	}
+
+	amount = strtol(argv[1], &p, 10);
+	count = 0;
+
+	if (!*ptr)
+	{
+		while (amount > 1)
 		{
-			printf("0\n");
+			for (i = 0; i < sizeof(cents[i]); i++)
+			{
+				if (amount >= cents[i])
+				{
+					count += amount / cents[i];
+					amount = amount % cents[i];
+				}
+			}
 		}
+		if (amount == 1)
+			count++;
 	}
 	else
 	{
 		printf("Error\n");
-
 		return (1);
 	}
+
+	printf("%d\n", count);
 	return (0);
 }
