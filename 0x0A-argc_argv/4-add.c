@@ -25,7 +25,7 @@ int main(int argc, char **argv)
 		{
 			int n = strtol(argv[i], &ptr, 10);
 
-			if (*p || n < 0)
+			if (*ptr || n < 0)
 			{
 				printf("Error\n");
 				return (1);
