@@ -15,15 +15,17 @@ int main(int argc, char **argv)
 {
 	int i;
 
+	char *ptr
+
 	int add = 0;
 
 	if (argc > 2)
 	{
 		for (i = 1; i < argc; i++)
 		{
-			int n = atoi(argv[i]);
+			int n = strtol(argv[i], &ptr, 10);
 
-			if (n <= 0)
+			if (*p || n < 0)
 			{
 				printf("Error\n");
 				return (1);
