@@ -15,7 +15,7 @@ int main(int argc, char **argv)
 {
 	int i;
 
-	char *ptr
+	char *ptr;
 
 	int add = 0;
 
