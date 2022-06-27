@@ -1,56 +1,39 @@
 #include "main.h"
 #include <stdlib.h>
-#include <stdio.h>
 
 /**
-* alloc_grid - returns a ponter to a dimensional array of integers
-* @width: width of array
-* @height: Height of array
-* Return: pointer to array
-*/
+ * alloc_grid - create a 2d integer grid using malloc.
+ * Description: Each element of the grid should be initialized to 0.
+ * @width: int size width
+ * @height: int size height
+ * Return: Pointer to new grid
+ */
 
 int **alloc_grid(int width, int height)
 {
-	int i, j, k, l;
-	int **matrix;
+	int **grid;
+	int i, j;
 
-	l = 0;
-
-	if (width <= 0 || height <= 0)
-	{
+	if (width + height < 2 || width < 1 || height < 1)
 		return (NULL);
-	}
 
-	matrix = malloc(height * sizeof(int *));
-
-	if (matrix == NULL)
-	{
+	grid = malloc(height * sizeof(*grid));
+	if (grid == NULL)
 		return (NULL);
-	}
 
-	for (i = 0; i < width; i++)
+	for (i = 0; i < height; i++)
 	{
-		matrix[i] = malloc(width * sizeof(int));
-		if (matrix[i] == NULL)
+		grid[i] = malloc(width * sizeof(**grid));
+		if (grid[i] == NULL)
 		{
-			l = 1;
-			break;
+			for (i--; i >= 0; i--)
+				free(grid[i]);
+			free(grid);
+			return (NULL);
 		}
-
-		for (j = 0; j < height; j++)
-		{
-			matrix[i][j] = 0;
-		}
+		for (j = 0; j < width; j++)
+			grid[i][j] = 0;
 	}
 
-	if (l == 1)
-	{
-		for (k = 0; k <= i; k++)
-		{
-			free(matrix[k]);
-		}
-		free(matrix);
-	}
-
-	return (matrix);
+	return (grid);
 }
