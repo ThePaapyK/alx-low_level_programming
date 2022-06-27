@@ -31,7 +31,7 @@ char *argstostr(int ac, char **av)
 		
 		s[i] = av[i];
 	}
-	return (s);
-
+	return (*s);
+	free(*s);
 	free(s);
 }
