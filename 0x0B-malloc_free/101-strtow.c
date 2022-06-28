@@ -14,10 +14,10 @@
 
 char **strtow(char *str)
 {
-	int i, j, sp, k;
+	int i, j, l, sp, k;
 	char **tow;
 
-	if (str == NULL || str == "")
+	if (str == NULL || *str == "")
 		return (NULL);
 
 	sp = 0;
@@ -59,8 +59,7 @@ char **strtow(char *str)
 		tow[k][j] = '\0';
 	}
 	tow[k][j] = NULL;
-	
+
 	return (tow);
 	free(tow);
 }
-	
