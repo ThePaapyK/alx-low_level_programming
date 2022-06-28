@@ -17,7 +17,7 @@ char **strtow(char *str)
 	int i, j, l, sp, k;
 	char **tow;
 
-	if (str == NULL || strcmp(str, " ") == 0)
+	if (str == NULL)
 		return (NULL);
 
 	sp = 0;
