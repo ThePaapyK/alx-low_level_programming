@@ -17,7 +17,7 @@ char **strtow(char *str)
 	int i, j, l, sp, k;
 	char **tow;
 
-	if (str == NULL)
+	if (str == NULL || *str == ' ')
 		return (NULL);
 
 	sp = 0;
@@ -39,7 +39,7 @@ char **strtow(char *str)
 	for (k = 0; k < sp; k++)
 	{
 
-		for (l = 0; str[l + j + 1] != " "; l++)
+		for (l = 0; str[l + j + 1] != ' '; l++)
 			;
 
 		tow[k] = malloc(sizeof(char) * l + 1);
@@ -52,13 +52,13 @@ char **strtow(char *str)
 			return (NULL);
 		}
 
-		for (j = 0; str[j] != " "; j++)
+		for (j = 0; str[j] != ' '; j++)
 		{
 			tow[k][j] = str[j];
 		}
 		tow[k][j] = '\0';
 	}
-	tow[k][j] = NULL;
+	tow[k][j] = '0';
 
 	return (tow);
 	free(tow);
