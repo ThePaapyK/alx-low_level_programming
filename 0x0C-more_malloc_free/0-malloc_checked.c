@@ -4,8 +4,7 @@
 
 /**
 * malloc_checked -  allocates memory using malloc.
-* Description: if malloc fails, the malloc_checked
-* function should cause normal process termination 
+* Description: if malloc fails terminate process
 * with a status value of 98.
 * @b: amount of memory to be allocated.
 * Return: pointer to the allocated memory.
