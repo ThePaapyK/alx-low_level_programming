@@ -26,7 +26,7 @@ int _strlen(char *s)
 * string_nconcat - concatenates two strings.
 * @s1: first string
 * @s2: second string
-* n: number of s2 elemnts that should be concatenated
+* @n: number of s2 elemnts that should be concatenated
 * Return: Newly allocated space in memory
 */
 
