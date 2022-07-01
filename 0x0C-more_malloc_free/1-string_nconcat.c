@@ -3,6 +3,26 @@
 #include <stdio.h>
 
 /**
+ * _strlen - returns the length of a string
+ * @s: string
+ * Return: Length of s
+ */
+
+int _strlen(char *s)
+{
+
+	int a = 0;
+
+	while (*s != '\0')
+	{
+		a++;
+		s++;
+	}
+
+	return (a);
+}
+
+/**
 * string_nconcat - concatenates two strings.
 * @s1: first string
 * @s2: second string
@@ -20,15 +40,11 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	
 	if (s2 == NULL)
 		s2 = "";
-	
-	for ( i = 0; s1[i] != '\0'; i++)
-		;
-	
-	for (j = 0; s2[j] != '\0'; j++)
-		;
+	i = _strlen(s1);
+	j = _strlen(s2);
 	if (n >= j)
 	{
-		s = malloc((i + j - 1) * sizeof(char));
+		s = malloc((i + j + 1) * sizeof(char));
 	}
 	else
 	{
@@ -45,6 +61,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		{
 			s[m + l] = s2[l];
 		}
+		s[m + l] = s2[l];
 	}
 	else if (n < j)
 	{
@@ -56,5 +73,5 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	}
 	return (s);
 
-	/*free (s);*/
+	free (s);
 }
