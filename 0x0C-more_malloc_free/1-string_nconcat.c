@@ -32,7 +32,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	}
 	else
 	{
-		s = malloc((i + n - 1) * sizeof(char));
+		s = malloc((i + n + 1) * sizeof(char));
 	}
 	for (k = 0; s1[k] != '\0'; k++)
 	{
@@ -48,10 +48,11 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	}
 	else if (n < j)
 	{
-		for (l = 0; l <= n; l++)
+		for (l = 0; l < n; l++)
 		{
 			s[m + l] = s2[l];
 		}
+		s[m + l] = '\0';
 	}
 	return (s);
 
