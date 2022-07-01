@@ -59,7 +59,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		for (l = 0; l < j; l++)
 			s[m + l] = s2[l];
 
-		s[m + l] = s2[l];
+		s[m + l] = '\0';
 	}
 	else if (n < j)
 	{
