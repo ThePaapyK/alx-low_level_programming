@@ -2,6 +2,22 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+char *_memset(char *s, char b, unsigned int n)
+{
+	char *beat;
+
+	beat = s;
+
+	while (n > 0)
+	{
+		*s = b;
+		s++;
+		n--;
+	}
+
+	return (beat);
+}
+
 /**
 * _calloc - allocates memory for an array, using malloc.
 * Description: The _calloc function allocates memory for an array
@@ -24,9 +40,13 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 
 	s = malloc(nmemb * size);
 	if (s == NULL)
+	{
 		return (NULL);
-	for (i = 0; i < nmemb; i++)
-		s[i] = 0;
+	}
+	else
+	{
+		_memset(s, 0, nmemb * size);
+	}
 
 	return (s);
 }
