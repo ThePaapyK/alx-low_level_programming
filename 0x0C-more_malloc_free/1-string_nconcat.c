@@ -33,7 +33,7 @@ int _strlen(char *s)
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	unsigned int i, j, k, l, m;
-	char *s;
+	char *s, *p;
 
 	if (s1 == NULL)
 		s1 = "";
@@ -68,5 +68,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 		s[m + l] = '\0';
 	}
-	return (s);
+	p = s;
+	return (p);
 }
