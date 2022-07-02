@@ -3,6 +3,29 @@
 #include <stdio.h>
 
 /**
+ * _memcpy - copies n bytes from memory area src to memory area dest
+ * @dest: destination memory area
+ * @src: source memory area
+ * @n: number of bytes to be copied
+ * Return: pointer to dest
+ */
+
+char *_memcpy(char *dest, char *src, unsigned int n)
+{
+	char *beat;
+
+	beat = dest;
+	while (n > 0)
+	{
+		*dest = *src;
+		dest++;
+		src++;
+		n--;
+	}
+	return (beat);
+}
+
+/**
 * _realloc - reallocates a memory block 
 * @ptr:  pointer to the memory previously allocated
 * @old_size: size, in bytes, of the allocated space for ptr.
@@ -33,10 +56,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 
 	s = malloc(new_size);
 
-	for(i = 0; i < new_size / sizeof(*ptr); i++)
-	{
-		s[i] = ptr[i];
-	}
+	_memcpy(s, ptr, old_size);
 	return (s);
 	free(s);
 }
