@@ -6,8 +6,8 @@
 * array_range - creates an array of integers.
 * Description: The array created should contain all the values
 * from min (included) to max (included), ordered from min to max
-* @min: minimum integers
-* @max: maximum integers
+* @min: minimum integer
+* @max: maximum integer
 * Return: the pointer to the newly created array.
 * If min > max, return NULL
 * If malloc fails, return NULL
@@ -22,7 +22,7 @@ int *array_range(int min, int max)
 		return (NULL);
 	for (i = min; i < max; i++)
 		;
-	s = malloc((i + 1) * sizeof(int));
+	s = malloc((i + 1) * sizeof(int*));
 	
 	if (s == NULL)
 		return (NULL);
