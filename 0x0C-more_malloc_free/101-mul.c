@@ -12,7 +12,7 @@ void printn(int  n);
 * Return: 0
 */
 
-int main(unsigned long int argc, char **argv)
+int main(int argc, char **argv)
 {
 	unsigned long int mul;
 	
@@ -21,12 +21,12 @@ int main(unsigned long int argc, char **argv)
 		print("Error\n");
 		exit(98);
 	}
-	if(argv[1] < 0 || argv[2] < 0)
+	if(atoi(argv[1]) < 0 || atoi(argv[2]) < 0)
 	{
 		print("Error\n");
 		exit(98);
 	}
-	mul = argv[1] * argv[2];
+	mul = atoi(argv[1]) * atoi(argv[2]);
 	
 	printn(mul);
 }
