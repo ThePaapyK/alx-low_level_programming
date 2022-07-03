@@ -172,7 +172,3 @@ void printn(long int  n)
 		printn(n / 10);
 	_putchar(n % 10 + '0');
 }
-
-/**
-* length - finds length of a argv
-* @
