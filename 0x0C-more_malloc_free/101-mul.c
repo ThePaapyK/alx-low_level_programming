@@ -101,13 +101,13 @@ int main(int argc, char **argv)
 		}
 	}
 
-	s = _calloc(e1; sizeof(int));
+	s = _calloc(e1, sizeof(int));
 	if (s == NULL)
 	{
 		print("Error\n");
 		exit(98);
 	}
-	p = _calloc(e2; sizeof(int));
+	p = _calloc(e2, sizeof(int));
 	if (p == NULL)
 	{
 		print("Error\n");
