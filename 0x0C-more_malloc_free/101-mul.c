@@ -71,11 +71,11 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 
 int main(int argc, char **argv)
 {
-	int mul;
+	int *mul;
 	char *s;
 	char *p;
 	int i, j, k, l, n, e1 = 0, e2 = 0;
-	
+
 	if (argc != 3)
 	{
 		print("Error\n");
