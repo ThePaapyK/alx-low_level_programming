@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 void print(char *s);
-void printn(int  n);
+void printn(long int  n);
 
 /**
 * main - multiplies two positive integers
@@ -29,6 +29,7 @@ int main(int argc, char **argv)
 	mul = atoi(argv[1]) * atoi(argv[2]);
 	
 	printn(mul);
+	return (0);
 }
 
 /** 
