@@ -71,9 +71,10 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 
 int main(int argc, char **argv)
 {
-	void mul;
+	int mul;
 	int *s;
-	int i, j, k, l, p, n, e1 = 0, e2 = 0;
+	int *p;
+	int i, j, k, l, n, e1 = 0, e2 = 0;
 	
 	if (argc != 3)
 	{
