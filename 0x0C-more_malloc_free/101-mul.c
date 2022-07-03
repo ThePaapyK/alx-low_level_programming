@@ -15,7 +15,7 @@ void printn(long int  n);
 int main(int argc, char **argv)
 {
 	unsigned long int mul;
-	
+
 	if (argc != 3)
 	{
 		print("Error\n");
@@ -27,7 +27,7 @@ int main(int argc, char **argv)
 		exit(98);
 	}
 	mul = atoi(argv[1]) * atoi(argv[2]);
-	
+
 	printn(mul);
 	return (0);
 }
@@ -41,7 +41,7 @@ int main(int argc, char **argv)
 void print(char *s)
 {
 	int i;
-	
+
 	for (i = 0; s[i] != '\0'; i++)
 	{
 		_putchar(s[i]);
@@ -56,22 +56,21 @@ void print(char *s)
 
 void printn(long int  n)
 {
-	/* print '-' for negative numbers */
-    if (n < 0) {
-        _putchar('-');
-        n = n * -1;
-    }
-  
-    /* Print Zero */
-    if (n == 0)
-        _putchar('0');
-  
-    /* First remove the last digit of number and print 
-    the remaining digits using recursion, then print
-    the last digit
- */
-    if (n / 10)
-        printn(n / 10);
-  
-    _putchar(n % 10 + '0');
+/* print '-' for negative numbers */
+	if (n < 0) 
+	{
+		_putchar('-');
+		n = n * -1;
+	}
+	/* Print Zero */
+	if (n == 0)
+		_putchar('0');
+
+/* First remove the last digit of number and print 
+* the remaining digits using recursion, then print
+* the last digit
+*/
+	if (n / 10)
+		printn(n / 10);
+	_putchar(n % 10 + '0');
 }
