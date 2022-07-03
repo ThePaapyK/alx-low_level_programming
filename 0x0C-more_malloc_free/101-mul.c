@@ -21,7 +21,7 @@ int main(int argc, char **argv)
 		print("Error\n");
 		exit(98);
 	}
-	if(atoi(argv[1]) < 0 || atoi(argv[2]) < 0)
+	if (atoi(argv[1]) < 0 || atoi(argv[2]) < 0)
 	{
 		print("Error\n");
 		exit(98);
@@ -32,7 +32,7 @@ int main(int argc, char **argv)
 	return (0);
 }
 
-/** 
+/**
 * print - prints a string
 * @s: string
 * Return: nothing
@@ -57,7 +57,7 @@ void print(char *s)
 void printn(long int  n)
 {
 /* print '-' for negative numbers */
-	if (n < 0) 
+	if (n < 0)
 	{
 		_putchar('-');
 		n = n * -1;
@@ -66,7 +66,8 @@ void printn(long int  n)
 	if (n == 0)
 		_putchar('0');
 
-/* First remove the last digit of number and print 
+/*
+* First remove the last digit of number and print
 * the remaining digits using recursion, then print
 * the last digit
 */
