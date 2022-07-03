@@ -2,15 +2,75 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+void print(char *s);
+void printn(int  n);
+
 /**
-* allo - allocates memory for a positive integer
-* @n: number
-* 
-* Return a pointer to the number
+* main - multiplies two positive integers
+* @argc: argument count
+* @argv: argument vector
+* Return: 0
 */
 
-unsigned long int *allo(unsigned long int *n)
+int main(unsigned long int argc, char **argv)
 {
-	n = malloc(sizeof(*n);
-		   return (n);
-		   }
+	unsigned long int mul;
+	
+	if (argc != 3)
+	{
+		print("Error\n");
+		exit(98);
+	}
+	if(argv[1] < 0 || argv[2] < 0)
+	{
+		print("Error\n");
+		exit(98);
+	}
+	mul = argv[1] * argv[2];
+	
+	printn(mul);
+}
+
+/** 
+* print - prints a string
+* @s: string
+* Return: nothing
+*/
+
+void print(char *s)
+{
+	int i;
+	
+	for (i = 0; s[i] != '\0'; i++)
+	{
+		_putchar(s[i]);
+	}
+}
+
+/**
+* printn - prints an integer
+* @n: number to be printed
+* Return: nothing
+*/
+
+void printn(long int  n)
+{
+	/* print '-' for negative numbers */
+    if (n < 0) {
+        _putchar('-');
+        n = n * -1;
+    }
+  
+    /* Print Zero */
+    if (n == 0)
+        _putchar('0');
+  
+    /* First remove the last digit of number and print 
+    the remaining digits using recursion, then print
+    the last digit
+ */
+    if (n / 10)
+        printn(n / 10);
+  
+    _putchar(n % 10 + '0');
+}
