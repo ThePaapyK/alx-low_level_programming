@@ -6,14 +6,13 @@
 * @age: age of dog
 * @owner: owner
 */
-tpedef struct dog
+typedef struct dog
 {
 	char *name;
 	float age;
 	char *owner;
 } dog_t;
 #endif /* DOG_H */
-
 #ifndef MAIN_H
 #define MAIN_H
 int _putchar(char c);
