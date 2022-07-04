@@ -1,19 +1,17 @@
 #ifndef DOG_H
 #define DOG_H
-
 /**
 * struct dog - holds characteristics about a dog
 * @name: name of dog
 * @age: age of dog
 * @owner: owner
 */
-
-struct dog
+tpedef struct dog
 {
 	char *name;
 	float age;
 	char *owner;
-};
+}; dog_t;
 #endif /* DOG_H */
 
 #ifndef MAIN_H
@@ -21,4 +19,6 @@ struct dog
 int _putchar(char c);
 void init_dog(struct dog *d, char *name, float age, char *owner);
 void print_dog(struct dog *d);
-#endif 
+dog_t *new_dog(char *name, float age, char *owner);
+void free_dog(dog_t *d);
+#endif /* MAIN_H */
