@@ -45,6 +45,7 @@ char *_strdup(char *str)
 * @name: name of dog
 * @age: age of dog
 * @owner: name of dog owner
+* Return: pointer to new_dog
 */
 dog_t *new_dog(char *name, float age, char *owner)
 {
