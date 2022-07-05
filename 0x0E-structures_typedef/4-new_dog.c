@@ -2,38 +2,44 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
-
 /**
- * _strdup - returns a pointer to a newly allocated space in memory, which
- * contains a copy of the string given as a parameter.
- * @str: string to copy
- *
- * Return: Pointer
- */
+* _strdup - returns a pointer to a new string which is
+* a duplicate of the string str.
+* @str: string to be copied
+* Return:  a pointer to the duplicated string.
+* It returns NULL if insufficient memory was available
+*/
+
 char *_strdup(char *str)
 {
-	int l, i;
+	int i, j;
 	char *s;
 
 	if (str == NULL)
-		return (0);
-
-	l = 0;
-	while (*(str + l))
-		l++;
-
-	s = malloc(sizeof(char) * l + 1);
-
-	if (s == 0)
-		return (0);
-
-	for (i = 0; i <= l; i++)
 	{
-		*(s + i) = *(str + i);
+		return (NULL);
 	}
+
+	for (i = 0; str[i] != '\0'; i++)
+		;
+
+	s = malloc(i * sizeof(char) + 1);
+
+	if (s == NULL)
+	{
+		return (NULL);
+	}
+
+	for (j = 0; j < i; j++)
+	{
+		s[j] = str[j];
+	}
+
+	s[j] = str[j];
+
 	return (s);
 }
+
 /**
 * new_dog -creates a new dog.
 * @name: name of dog
