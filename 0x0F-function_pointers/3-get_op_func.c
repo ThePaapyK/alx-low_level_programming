@@ -16,10 +16,10 @@ int (*get_op_func(char *s))(int a, int b)
 {
 	int i = 0;
 
-	void (*fun_ptr_arr[])(int, int) = {op_add; op_sub, op_mul, op_div, op_mod};
+	int (*fun_ptr_arr[])(int a, int b) = {op_add, op_sub, op_mul, op_div, op_mod};
 	char array[] = {'+', '-', '*', '/', '%'};
 	
-	while (i < 5 && )
+	while (i < 5)
 	{
 		if (s == array[i])
 		{
