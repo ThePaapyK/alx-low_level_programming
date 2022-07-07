@@ -23,7 +23,7 @@ int (*get_op_func(char *s))(int a, int b)
 	{
 		if (*s == array[i])
 		{
-			return (fun_ptr_arr[i](a, b));
+			return (fun_ptr_arr[i](int a, int b));
 
 		}
 	}
