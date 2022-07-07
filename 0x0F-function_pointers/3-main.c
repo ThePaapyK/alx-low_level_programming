@@ -11,7 +11,7 @@
 
 int main(int argc, char **argv)
 {
-
+	int *oper;
 	if (argc != 4)
 	{
 		printf("Error\n");
@@ -28,9 +28,9 @@ int main(int argc, char **argv)
 		exit(100);
 	}
 
-	(*get_op_func(argv[2]))(atoi(argv[1]), atoi(argv[3]));
+	oper = (*get_op_func(argv[2]))(atoi(argv[1]), atoi(argv[3]));
 
-	printf("%d\n", oper);
+	printf("%d\n", *oper);
 
 	return (0);
 }
