@@ -14,7 +14,6 @@
 
 int (*get_op_func(char *s))(int a, int b)
 {
-	int a, b;
 	int i = 0;
 
 	int (*fun_ptr_arr[])(int a, int b) = {op_add, op_sub, op_mul, op_div, op_mod};
@@ -24,7 +23,7 @@ int (*get_op_func(char *s))(int a, int b)
 	{
 		if (*s == array[i])
 		{
-			return ((fun_ptr_arr[i])(a , b)); 
+			get_op_func(char *s) = fun_ptr_arr[i];
 
 		}
 	}
