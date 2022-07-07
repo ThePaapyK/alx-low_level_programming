@@ -18,13 +18,13 @@ int (*get_op_func(char *s))(int a, int b)
 	int i = 0;
 
 	int (*fun_ptr_arr[])(int a, int b) = {op_add, op_sub, op_mul, op_div, op_mod};
-	char array[] = {"+", "-", "*", "/", "%"};
+	char array[] = {'+', '-', '*', '/', '%'};
 	
 	while (i < 5)
 	{
-		if (s == array[i])
+		if (*s == array[i])
 		{
-			return ((*fun_ptr_arr[i])(a , b)); 
+			return ((fun_ptr_arr[i])(a , b)); 
 
 		}
 	}
