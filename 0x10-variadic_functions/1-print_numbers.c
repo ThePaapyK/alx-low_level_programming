@@ -3,6 +3,8 @@
 #include <stdarg.h>
 
 void printn(long n);
+void prints(char *s);
+
 /**
 * print_numbers -  prints numbers, followed by a new line.
 * @separator: the string to be printed between numbers
@@ -20,6 +22,7 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	for (i = 0; i < n; i++)
 	{
 		printn(va_arg(ap, int));
+		prints(separator);
 	}
 	_putchar('\n');
 }
@@ -46,4 +49,19 @@ void printn(long n)
 
 	/* Print the last digit */
 	_putchar(n % 10 + '0');
+}
+
+/**
+* prints - prints a string
+* @s: string to be printed
+*/
+
+void prints(char *s)
+{
+	int i;
+	
+	for (i = 0; s[i] != '\0'; i++)
+	{
+		_putchar(s[i]);
+	}
 }
