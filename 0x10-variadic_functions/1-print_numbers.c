@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include <stdarg.h>
 
-void printn(long n);
-void prints( const char *s);
+void printn(int n);
+void prints(const char *s);
 
 /**
 * print_numbers -  prints numbers, followed by a new line.
@@ -31,13 +31,14 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 }
 
 /**
-* print n - prints integers
+* printn - prints integers
 * @n: integer to be printed
 */
 
-void printn(long n)
+void printn(int n)
 {
-	/** If number is smaller than 0, put a - sign
+	/**
+	* If number is smaller than 0, put a - sign
 	* and change number to positive
 	*/
 	if (n < 0)
