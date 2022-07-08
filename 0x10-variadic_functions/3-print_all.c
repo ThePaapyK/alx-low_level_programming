@@ -1,6 +1,7 @@
 #include "variadic_functions.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdarg.h>
 
 /**
 * printint - prints int element from va_list
@@ -76,7 +77,7 @@ void print_all(const char * const format, ...)
 			bank[j].f(ap);
 			dist = ", ";
 		}
-		
+
 		i++;
 	}
 	printf("\n");
