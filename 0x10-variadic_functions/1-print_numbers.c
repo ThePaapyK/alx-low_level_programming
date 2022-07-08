@@ -56,7 +56,7 @@ void printn(long n)
 * @s: string to be printed
 */
 
-void prints(char *s)
+void prints(const char *s)
 {
 	int i;
 	
