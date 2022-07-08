@@ -3,7 +3,7 @@
 #include <stdarg.h>
 
 void printn(long n);
-void prints(char *s);
+void prints( const char *s);
 
 /**
 * print_numbers -  prints numbers, followed by a new line.
