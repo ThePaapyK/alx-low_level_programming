@@ -18,7 +18,7 @@ void printint(va_list ap)
 */
 void printchar(va_list ap)
 {
-	printf("%c", va_arg(ap, char));
+	printf("%c", va_arg(ap, int));
 }
 
 /**
@@ -30,7 +30,7 @@ void printstr(va_list ap)
 {
 	char *s;
 
-	s = va_arg(list, char *);
+	s = va_arg(ap, char *);
 	if (s == NULL)
 		s = "(nil)";
 	printf("%s", s);
@@ -43,7 +43,7 @@ void printstr(va_list ap)
 
 void printfloat(va_list ap)
 {
-	printf("%f", va_arg(ap, float));
+	printf("%f", va_arg(ap, double));
 }
 
 
