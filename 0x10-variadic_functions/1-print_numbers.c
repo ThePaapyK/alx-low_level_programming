@@ -1,5 +1,6 @@
 #include "variadic_functions.h"
 #include <stdlib.h>
+#include <stdarg.h>
 
 void printn(long n);
 /**
