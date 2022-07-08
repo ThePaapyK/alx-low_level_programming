@@ -16,13 +16,16 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 {
 	va_list ap;
 	unsigned int i;
-	
+
 	va_start(ap, n);
-	
+
 	for (i = 0; i < n; i++)
 	{
 		printn(va_arg(ap, int));
-		prints(separator);
+		if (i < n - 1)
+		{
+			prints(separator);
+		}
 	}
 	_putchar('\n');
 }
@@ -59,7 +62,7 @@ void printn(long n)
 void prints(const char *s)
 {
 	int i;
-	
+
 	for (i = 0; s[i] != '\0'; i++)
 	{
 		_putchar(s[i]);
