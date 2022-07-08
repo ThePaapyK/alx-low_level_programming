@@ -18,16 +18,19 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	unsigned int i;
 
 	va_start(ap, n);
-
-	for (i = 0; i < n; i++)
+	if (separator != NULL)
 	{
-		printn(va_arg(ap, int));
-		if (i < n - 1)
+		for (i = 0; i < n; i++)
 		{
-			prints(separator);
+			printn(va_arg(ap, int));
+			if (i < n - 1)
+			{
+				prints(separator);
+			}
 		}
+		_putchar('\n');
 	}
-	_putchar('\n');
+	va_end(ap);
 }
 
 /**
