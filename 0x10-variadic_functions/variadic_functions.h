@@ -11,6 +11,9 @@ void printint(va_list ap);
 void printchar(va_list ap);
 void printfloat(va_list ap);
 
+/**
+* struct doer - contains elements
+*/
 typedef struct doer
 {
 	char *daty;
