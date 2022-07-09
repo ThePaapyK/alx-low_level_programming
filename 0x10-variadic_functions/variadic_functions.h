@@ -13,6 +13,8 @@ void printfloat(va_list ap);
 
 /**
 * struct doer - contains elements
+* @daty: first member
+* @f: second member
 */
 typedef struct doer
 {
