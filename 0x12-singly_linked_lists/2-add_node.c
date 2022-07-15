@@ -10,7 +10,7 @@
 list_t *add_node_end(list_t **head, const char *str)
 {
 	char *noah;
-	char *sire;
+	struct list_s *sire;
 
 	list_t *node = *head;
 	while (node != NULL)
@@ -27,3 +27,4 @@ list_t *add_node_end(list_t **head, const char *str)
 	node->str = noah;
 	node->next = NULL;
 	return (node);
+}
