@@ -35,8 +35,7 @@ list_t *add_node_end(list_t **head, const char *str)
 	{
 		c_node = c_node->next;
 	}
+	sire->next = NULL;
 	c_node->next = sire;
-	sire = *head;
-	c_node->next = NULL;
-	return (*head);
+
 }
