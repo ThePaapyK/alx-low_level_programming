@@ -9,7 +9,7 @@
 
 list_t *add_node(list_t **head, const char *str)
 {
-	struct list_s *sire;
+	list_t *sire;
 	int i;
 	list_t *node = *head;
 
