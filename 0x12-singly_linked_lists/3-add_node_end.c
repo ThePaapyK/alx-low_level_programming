@@ -37,5 +37,5 @@ list_t *add_node_end(list_t **head, const char *str)
 	}
 	sire->next = NULL;
 	c_node->next = sire;
-
+	return (sire);
 }
