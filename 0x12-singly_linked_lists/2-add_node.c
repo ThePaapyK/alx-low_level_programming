@@ -9,24 +9,29 @@
 
 list_t *add_node(list_t **head, const char *str)
 {
-	char *noah;
-	struct list_s *sire;
-	struct list_s *YHWH;
+	list_s *sire;
+	int i;
+
+	for (i = 0; str[i] != '\0'; i++)
+		;
 
 	list_t *node = *head;
-	while (node != NULL)
-	{
-		node = node->next;
-	}
-	sire = malloc(sizeof(*head));
+
+	sire = malloc(sizeof(list_t));
 	if (sire == NULL)
+	{
+		free(sire);
 		return (NULL);
+	}
 
-	YHWH = NULL;
-	noah = strdup(str);
-
-	node->next = sire;
-	node->str = noah;
-	node->next = YHWH;
-	return (sire);
+	sire->str = strdup(str);
+	if (sire->str == NULL)
+	{
+		free(sire);
+		return (NULL);
+	}
+	sire->len = i;
+	sire->next = node;
+	node = sire;
+	return (node);
 }
