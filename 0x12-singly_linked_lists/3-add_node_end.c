@@ -10,8 +10,10 @@
 list_t *add_node_end(list_t **head, const char *str)
 {
 	list_t *sire;
+	list_t *c_node;
 	int i;
 
+	c_node = *head
 	for (i = 0; str[i] != '\0'; i++)
 		;
 
@@ -31,10 +33,10 @@ list_t *add_node_end(list_t **head, const char *str)
 	sire->len = i;
 	while (head != NULL)
 	{
-		*head = *head->next;
+		c_node = c_node->next;
 	}
-	*head->next = sire;
+	c_node->next = sire;
 	sire = *head;
-	*head->next = NULL;
+	c_node->next = NULL;
 	return (*head);
 }
