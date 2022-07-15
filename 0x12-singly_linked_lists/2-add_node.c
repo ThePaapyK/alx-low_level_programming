@@ -7,10 +7,11 @@
 * Return: pointer to newly added node
 */
 
-list_t *add_node_end(list_t **head, const char *str)
+list_t *add_node(list_t **head, const char *str)
 {
 	char *noah;
 	struct list_s *sire;
+	struct list_s *YHWH;
 
 	list_t *node = *head;
 	while (node != NULL)
@@ -21,10 +22,11 @@ list_t *add_node_end(list_t **head, const char *str)
 	if (sire == NULL)
 		return (NULL);
 
+	YHWH = NULL;
 	noah = strdup(str);
 
 	node->next = sire;
 	node->str = noah;
-	node->next = NULL;
-	return (node);
+	node->next = YHWH;
+	return (sire);
 }
