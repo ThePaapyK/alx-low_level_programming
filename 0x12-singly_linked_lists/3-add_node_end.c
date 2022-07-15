@@ -31,7 +31,7 @@ list_t *add_node_end(list_t **head, const char *str)
 		return (NULL);
 	}
 	sire->len = i;
-	while (head != NULL)
+	while (c_node != NULL)
 	{
 		c_node = c_node->next;
 	}
