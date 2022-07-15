@@ -9,13 +9,12 @@
 
 list_t *add_node(list_t **head, const char *str)
 {
-	list_s *sire;
+	struct list_s *sire;
 	int i;
+	list_t *node = *head;
 
 	for (i = 0; str[i] != '\0'; i++)
 		;
-
-	list_t *node = *head;
 
 	sire = malloc(sizeof(list_t));
 	if (sire == NULL)
