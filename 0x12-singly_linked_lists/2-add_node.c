@@ -9,17 +9,18 @@
 
 list_t *add_node_end(list_t **head, const char *str)
 {
-	while (head != NULL)
+	list_t *node = *head;
+	while (node != NULL)
 	{
-		*head = *head->next;
+		node = node->next;
 	}
 	char *noah;
 	noah = strdup(str);
 
 	if (noah == NULL)
 		return (NULL);
-	*head->next;
-	*head->str = noah;
-	*head->next = NULL;
-	return (*head);
+	node->next;
+	node->str = noah;
+	node->next = NULL;
+	return (node);
 }
