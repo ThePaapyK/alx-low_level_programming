@@ -4,7 +4,6 @@
 
 /**
 * get_op_func - gets the right operator to work
-* @get_op_func: pointer to operator function
 * @s: pointer specific operator
 * Return:  pointer to the function that corresponds
 * to the operator given as a parameter
