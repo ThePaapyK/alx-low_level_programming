@@ -4,10 +4,7 @@
 
 /**
 * get_op_func - gets the right operator to work
-* @get_op_func: pointer to operator function
 * @s: pointer specific operator
-* @a: first argument
-* @b: second argument
 * Return:  pointer to the function that corresponds
 * to the operator given as a parameter
 */
@@ -17,13 +14,13 @@ int (*get_op_func(char *s))(int a, int b)
 	    int i = 0;
 
 	op_t ops[] = {
-        {"+", op_add},
-        {"-", op_sub},
-        {"*", op_mul},
-        {"/", op_div},
-        {"%", op_mod},
-        {NULL, NULL}
-    };
+		{"+", op_add},
+		{"-", op_sub},
+		{"*", op_mul},
+		{"/", op_div},
+		{"%", op_mod},
+		{NULL, NULL}
+	};
 
 	while (ops[i].op != NULL)
 	{
@@ -32,4 +29,4 @@ int (*get_op_func(char *s))(int a, int b)
 		i++;
 	}
 	return (0);
-}	
+}
