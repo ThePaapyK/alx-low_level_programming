@@ -11,26 +11,32 @@
 
 int main(int argc, char **argv)
 {
-	int (*oper)(int, int);
+	(void) argc;
+	char *oper;
+	int un, deux;
+	
+	oper = argv[2];
+	un = atoi[1];
+	deux = atoi[3]
+
 	if (argc != 4)
 	{
 		printf("Error\n");
 		exit(98);
 	}
-	if (argv[2] != "+" || argv[2] != "-" || argv[2] != "*" || argv[2] != "/" || argv[2] != "%")
+	
+	if (get_op_func(oper) == NULL || oper[1] != '\0')
 	{
 		printf("Error\n");
 		exit(99);
 	}
-	if ((argv[2] == "/" || argv[2] == "%") && (argv[3] == "0"))
+	
+	if ((*oper == '%' || *oper == '/') && atoi(argv[3]) == 0)
 	{
 		printf("Error\n");
 		exit(100);
 	}
 
-	oper = get_op_func(argv[2]);
-
-	printf("%d\n", oper(atoi(argv[1]), atoi(argv[3])));
-
+	printf("%d\n", get_op_func(oper)(un, deux));
 	return (0);
 }
