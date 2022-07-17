@@ -29,6 +29,7 @@ int (*get_op_func(char *s))(int a, int b)
 	{
 		if (*s == ops[i].op[0])
 			return (ops[i].f(a, b));
+		i++;
 	}
 	return (0);
 }	
