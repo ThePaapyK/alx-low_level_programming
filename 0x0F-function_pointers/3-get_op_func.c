@@ -14,18 +14,21 @@
 
 int (*get_op_func(char *s))(int a, int b)
 {
-	int i = 0;
+	    int i = 0;
 
-	int (*fun_ptr_arr[])(int a, int b) = {op_add, op_sub, op_mul, op_div, op_mod};
-	char array[] = {'+', '-', '*', '/', '%'};
-	
-	while (i < 5)
+	op_t ops[] = {
+        {"+", op_add},
+        {"-", op_sub},
+        {"*", op_mul},
+        {"/", op_div},
+        {"%", op_mod},
+        {NULL, NULL}
+    };
+
+	while (ops[i].op != NULL)
 	{
-		if (*s == array[i])
-		{
-			return (fun_ptr_arr[i]);
-		}
-		i++;
+		if (*s == ops[i].op[0])
+			return (ops[i].f(a, b));
 	}
-	return (NULL);
-}
+	return (0);
+}	
