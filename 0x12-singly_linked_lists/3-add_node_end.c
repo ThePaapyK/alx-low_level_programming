@@ -39,7 +39,6 @@ list_t *add_node_end(list_t **head, const char *str)
 	sire->len = i;
 	sire->next = NULL;
 
-
 	if (c_node)
 	{
 		while (c_node->next)
@@ -47,9 +46,7 @@ list_t *add_node_end(list_t **head, const char *str)
 		c_node->next = sire;
 	}
 	else
-	{
 		*head = sire;
-	}
 
 	return (sire);
 }
