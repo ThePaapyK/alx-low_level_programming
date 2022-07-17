@@ -16,8 +16,8 @@ int main(int argc, char **argv)
 	int un, deux;
 	
 	oper = argv[2];
-	un = atoi[1];
-	deux = atoi[3]
+	un = atoi(argv[1]);
+	deux = atoi(argv[3]);
 
 	if (argc != 4)
 	{
