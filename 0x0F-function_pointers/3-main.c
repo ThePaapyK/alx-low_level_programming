@@ -14,7 +14,7 @@ int main(int argc, char **argv)
 	char *oper;
 	int un, deux;
 
-	(void) argc;
+	/* (void) argc; */
 
 	oper = argv[2];
 	un = atoi(argv[1]);
