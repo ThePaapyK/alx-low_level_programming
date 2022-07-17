@@ -43,7 +43,7 @@ list_t *add_node_end(list_t **head, const char *str)
 	if (c_node)
 	{
 		while (c_node->next)
-			c_node = c_node-next;
+			c_node = c_node->next;
 		c_node->next = sire;
 	}
 	else
