@@ -11,10 +11,11 @@
 
 int main(int argc, char **argv)
 {
-	(void) argc;
 	char *oper;
 	int un, deux;
-	
+
+	(void) argc;
+
 	oper = argv[2];
 	un = atoi(argv[1]);
 	deux = atoi(argv[3]);
@@ -24,13 +25,13 @@ int main(int argc, char **argv)
 		printf("Error\n");
 		exit(98);
 	}
-	
+
 	if (get_op_func(oper) == NULL || oper[1] != '\0')
 	{
 		printf("Error\n");
 		exit(99);
 	}
-	
+
 	if ((*oper == '%' || *oper == '/') && atoi(argv[3]) == 0)
 	{
 		printf("Error\n");
