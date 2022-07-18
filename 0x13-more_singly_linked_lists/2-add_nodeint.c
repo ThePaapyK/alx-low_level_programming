@@ -12,19 +12,19 @@ listint_t *add_nodeint(listint_t **head, const int n)
 {
 	listint_t *c_node = *head;
 	listint_t *sire;
-	
+
 	sire = malloc(sizeof(listint_t));
-	
+
 	if (!sire)
 	{
 		free(sire);
 		return (NULL);
 	}
-	
+
 	sire.n = n;
-	
+
 	sire->next = c_node;
 	c_node = sire;
-	
+
 	return (c_node);
 }
