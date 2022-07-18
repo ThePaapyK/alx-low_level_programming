@@ -1,4 +1,4 @@
-#include "main.h"
+#include "lists.h"
 
 /**
 * add_nodeint_end - adds a new node at the end
@@ -13,7 +13,6 @@ listint_t *add_nodeint_end(listint_t **head, const int n)
 {
 	listint_t *c_node = *head;
 	listint_t *sire;
-	int i = 0;
 
 	sire = malloc(sizeof(listint_t));
 
@@ -23,11 +22,11 @@ listint_t *add_nodeint_end(listint_t **head, const int n)
 		return (NULL);
 	}
 
-	while (c_node->next)
+	while (c_node)
 	{
 		c_node = c_node->next;
 	}
-
+	sire->n = n;
 	sire->next = NULL;
 
 	if (c_node)
