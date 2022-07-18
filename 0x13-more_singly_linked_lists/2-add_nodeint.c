@@ -15,6 +15,12 @@ listint_t *add_nodeint(listint_t **head, const int n)
 	
 	sire = malloc(sizeof(listint_t));
 	
+	if (!sire)
+	{
+		free(sire);
+		return (NULL);
+	}
+	
 	sire.n = n;
 	
 	sire->next = c_node;
