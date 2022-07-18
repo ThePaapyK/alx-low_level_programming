@@ -10,7 +10,6 @@
 
 listint_t *add_nodeint(listint_t **head, const int n)
 {
-	listint_t *c_node = *head;
 	listint_t *sire;
 
 	sire = malloc(sizeof(listint_t));
@@ -21,10 +20,10 @@ listint_t *add_nodeint(listint_t **head, const int n)
 		return (NULL);
 	}
 
-	sire.n = n;
+	sire->n = n;
 
-	sire->next = c_node;
-	c_node = sire;
+	sire->next = *head;
+	*head = sire;
 
-	return (c_node);
+	return (*head);
 }
