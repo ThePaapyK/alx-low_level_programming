@@ -14,12 +14,9 @@ int pop_listint(listint_t **head)
 	listint_t *c_node = *head;
 	listint_t *sire;
 
-	if (head == NULL)
-	{
-		if (*head == NULL)
-			return (0);
+	if (*head == NULL)
 		return (0);
-	}
+
 	a = (c_node)->n;
 	sire = c_node->next;
 	free(c_node);
