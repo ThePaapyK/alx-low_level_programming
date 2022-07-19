@@ -9,19 +9,17 @@
 
 void free_listint2(listint_t **head)
 {
-	listint_t *c_node = *head;
+	listint_t *vector;
+	listint_t *rhodes;
 
-	if (head)
+	if (head != NULL)
 	{
-		if (c_node)
+		rhodes = *head;
+		while ((vector = rhodes) != NULL)
 		{
-			while (c_node->next)
-			{
-				free(c_node);
-				c_node = c_node->next;
-			}
-			free(c_node);
+			rhodes = rhodes->next;
+			free(vector);
 		}
-		free(head);
+		*head = NULL;
 	}
 }
