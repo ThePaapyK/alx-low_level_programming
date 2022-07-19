@@ -18,8 +18,6 @@ int pop_listint(listint_t **head)
 		vector = *head;
 
 	}
-	else
-	{
-		return (0);
-	}
+
+	return (0);
 }
