@@ -15,12 +15,12 @@ int pop_listint(listint_t **head)
 
 	if (head == NULL)
 	{
-		if (*head == NULL)
+		if (vector == NULL)
 			return(0);
 		return (0);
 	}
 	a = vector->n;
 	*head = vector->next;
-	vector = *head;
+	vector = vector->next;
 	return (a);
 }
