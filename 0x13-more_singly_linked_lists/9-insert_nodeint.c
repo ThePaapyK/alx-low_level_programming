@@ -11,21 +11,21 @@
 * index idx, do not add the new node and return NULL
 */
 
-listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n);
+listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
 	listint_t *sire;
 	listint_t *temp;
 	listint_t *c_node = *head;
-	
+
 	unsigned int i = 0;
-	while (c_node)
+	while (c_node->next)
 	{
-		if (i == idx)
+		if (i == idx - 1)
 			break;
 		i++;
 		c_node = c_node->next;
 	}
-	
+
 	sire = malloc(sizeof(listint_t));
 	if (!sire)
 	{
@@ -36,6 +36,6 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n);
 	temp = c_node->next;
 	sire->next = temp;
 	c_node->next = sire;
-	
+
 	return (sire);
 }
