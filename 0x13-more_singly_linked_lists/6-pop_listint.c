@@ -16,7 +16,10 @@ int pop_listint(listint_t **head)
 	{
 		*head = vector->next;
 		vector = *head;
-		return (vector->n);
+
 	}
-	return (0);
+	else
+	{
+		return (0);
+	}
 }
