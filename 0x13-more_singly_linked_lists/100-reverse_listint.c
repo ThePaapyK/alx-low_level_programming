@@ -8,10 +8,10 @@
 
 listint_t *reverse_listint(listint_t **head)
 {
-	listint_int *sire = *head;
 	listint_t *c_node = *head;
+	listint_t *temp = *head;
 	
-	whille (c_node->next)
+	while (c_node->next)
 	{
 		c_node->next = c_node;
 		c_node = temp->next;
