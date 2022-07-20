@@ -14,18 +14,18 @@
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
 	listint_t *sire;
-	listint_t *temp;
 
 	listint_t *c_node = *head;
 
 	unsigned int i = 0;
-
-	while (c_node->next)
+	if (idx != 0)
 	{
-		if (i == idx - 1)
-			break;
-		i++;
-		c_node = c_node->next;
+		while (c_node && i < idx - 1)
+		{
+
+			i++;
+			c_node = c_node->next;
+		}
 	}
 
 
@@ -35,19 +35,17 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		free(sire);
 		return (NULL);
 	}
-	if (c_node)
+	sire->n = n;
+	if (idx == 0)
 	{
-		sire->n = n;
-		temp = c_node->next;
-		sire->next = temp;
-		c_node->next = sire;
+		sire->next = *head;
+		*head = sire;
 
-		if (!sire)
-			return (NULL);
 	}
 	else
 	{
-		return (NULL);
+		sire->next = c_node->next;
+		c_node->next = sire;
 	}
 
 	return (sire);
