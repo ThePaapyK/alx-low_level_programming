@@ -32,7 +32,8 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 	{
 		sire->next = c_node->next;
 	} 
-		sire = current_node;
+		sire = c_node;
 		c_node = c_node->next;
+
 		return(*head);
 }
