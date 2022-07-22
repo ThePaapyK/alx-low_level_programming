@@ -10,10 +10,9 @@
 
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int i, j, k, l, sum, a;
+	int i, j, k, l, a;
 
-	l = 0;
-	sum = 0;
+	unsigned int sum = 0;
 
 	if (b == NULL)
 		return (0);
@@ -24,7 +23,7 @@ unsigned int binary_to_uint(const char *b)
 			return (0);
 	}
 
-	for (j = i; b[j]; j--)
+	for (j = i, l = 0; b[j]; j--, l++)
 	{
 		k = 'b[j]';
 		a = pow(2, l)
