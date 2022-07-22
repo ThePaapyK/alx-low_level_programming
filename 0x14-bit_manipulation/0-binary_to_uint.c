@@ -26,7 +26,7 @@ unsigned int binary_to_uint(const char *b)
 	for (j = i, l = 0; b[j]; j--, l++)
 	{
 		k = 'b[j]';
-		a = pow(2, l)
+		a = pow(2, l);
 		sum += k * a;
 	}
 	return (sum);
