@@ -2,7 +2,7 @@
 #include <math.h>
 #include <string.h>
 /**
-* int binary_to_uint - converts a binary number to an unsigned int.
+* binary_to_uint - converts a binary number to an unsigned int.
 * @b: points to a string of 0 and 1 chars
 * Return: the converted number, or 0 if:
 * there is one or more chars in the string b that is not 0 or 1
@@ -26,7 +26,7 @@ unsigned int binary_to_uint(const char *b)
 
 	i--;
 	l = 0;
-	while(i >= 0)
+	while (i >= 0)
 	{
 		k =  b[i] - 48;
 		a = _pow(2, l);
