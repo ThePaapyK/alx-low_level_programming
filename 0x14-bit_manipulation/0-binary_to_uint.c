@@ -1,6 +1,6 @@
 #include "main.h"
 #include <math.h>
-
+#include <string.h>
 /**
 * int binary_to_uint - converts a binary number to an unsigned int.
 * @b: points to a string of 0 and 1 chars
@@ -11,8 +11,8 @@
 
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int i, j, k, l, a;
-
+	int i, a, l;
+	int k;
 	unsigned int sum = 0;
 
 	if (b == NULL)
@@ -20,15 +20,40 @@ unsigned int binary_to_uint(const char *b)
 
 	for (i = 0; b[i] != '\0'; i++)
 	{
-		if (b[i] != '0' || b[i] != '1')
+		if (b[i] != '0' && b[i] != '1')
 			return (0);
 	}
 
-	for (j = i, l = 0; b[j]; j--, l++)
+	i--;
+	l = 0;
+	while(i >= 0)
 	{
-		k = b[j];
-		a = round(pow(2, l));
-		sum += k * a;
+		k =  b[i] - 48;
+		a = _pow(2, l);
+		sum += (k * a);
+
+		i--;
+		l++;
 	}
 	return (sum);
+}
+
+/**
+ * _pow - finds the exponent of a number
+ * @a: base
+ * @b: power
+ * Return: result
+ */
+
+int _pow(int a, int b)
+{
+	int i;
+
+	int exp = 1;
+
+	for (i = 0; i < b; i++)
+	{
+		exp = exp * a;
+	}
+	return (exp);
 }
