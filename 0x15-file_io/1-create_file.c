@@ -10,7 +10,7 @@
 
 int create_file(const char *filename, char *text_content)
 {
-	int fd, nfd, mfd;
+	int fd, nfd;
 	char *buff;
 	char *buffer;
 	ssize_t wr;
@@ -32,10 +32,8 @@ int create_file(const char *filename, char *text_content)
 	length = sizeof(text_content);
 	if (fd == -1)
 	{
-		mfd = open(filename, O_TRUNC | O_RDWR);
-		if (mfd == -1)
-			return (-1);
-		return (1);
+		fd = open(filename, O_TRUNC | O_RDWR);
+
 	}
 
 	wr = write(fd, buffer, length);
