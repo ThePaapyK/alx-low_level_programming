@@ -73,15 +73,18 @@ int main(int argc, char **argv)
 		dprintf(2, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
-	if (res == 99)
+	else if (res == 99)
 	{
 		dprintf(2, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
-	if (res == 3 || res == 4)
+	else if (res == 3 || res == 4)
 	{
 		dprintf(2, "Error: Can't close fd %d\n", res);
 		exit(100);
 	}
-	return (0);
+	else
+	{
+		return (0);
+	}
 }
