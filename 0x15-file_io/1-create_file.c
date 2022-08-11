@@ -3,7 +3,7 @@
 /**
  * create_file - creates a file
  * @filename: name of the file  to be created
- * @text_context: a NULL terminated string to write to the file
+ * @text_content: a NULL terminated string to write to the file
  *
  * Return: 1 on success, -1 on failure.
  */
@@ -13,7 +13,7 @@ int create_file(const char *filename, char *text_content)
 	int fd, nfd, mfd;
 	char *buff;
 	char *buffer;
-
+	ssize_t wr;
 	size_t length;
 
 	if (!filename)
@@ -38,10 +38,11 @@ int create_file(const char *filename, char *text_content)
 		return (1);
 	}
 
-	write(fd, buffer, length);
+	wr = write(fd, buffer, length);
 	close(fd);
 	free(buff);
-
+	if (wr == -1)
+		return (-1);
 	return (1);
 }
 
