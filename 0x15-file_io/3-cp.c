@@ -8,7 +8,7 @@
  * Return: 1 on success, -1 on failure
  */
 
-int copyf(const char* file_from, const char *file_to)
+int copyf(const char *file_from, const char *file_to)
 {
 	int fd, sd;
 	char *buff;
@@ -19,7 +19,7 @@ int copyf(const char* file_from, const char *file_to)
 		return (98);
 
 	fd = open(file_from, O_RDWR);
-	sd = open(file_to, O_CREAT | O_EXCL |O_RDWR, 0664);
+	sd = open(file_to, O_CREAT | O_EXCL | O_RDWR, 0664);
 
 	if (sd == -1)
 	{
@@ -42,7 +42,7 @@ int copyf(const char* file_from, const char *file_to)
 	cs = close(sd);
 
 	if (cf == -1)
-		return(fd);
+		return (fd);
 	if (cs == -1)
 		return (sd);
 	free(buff);
