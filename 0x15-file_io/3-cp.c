@@ -42,9 +42,9 @@ int copyf(const char *file_from, const char *file_to)
 	cs = close(sd);
 
 	if (cf == -1)
-		return (fd);
+		return (100);
 	if (cs == -1)
-		return (sd);
+		return (100);
 	free(buff);
 	return (1);
 }
