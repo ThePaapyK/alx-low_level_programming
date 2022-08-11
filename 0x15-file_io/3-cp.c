@@ -80,7 +80,7 @@ int main(int argc, char **argv)
 	}
 	else if (res == 3 || res == 4)
 	{
-		dprintf(2, "Error: Can't close fd %d\n", res);
+		dprintf(2, "Error: Can't close fd\n");
 		exit(100);
 	}
 	else
