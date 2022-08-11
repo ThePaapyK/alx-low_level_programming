@@ -29,13 +29,14 @@ int create_file(const char *filename, char *text_content)
 
 	buff = malloc(sizeof(text_content));
 	buffer = _strcp(text_content, buff);
-	length = sizeof(text_content);
+
 	if (fd == -1)
 	{
 		fd = open(filename, O_TRUNC | O_RDWR);
 
 	}
-
+	for (length = 0; text_content[length] != '\0'; length++)
+		;
 	wr = write(fd, buffer, length);
 	close(fd);
 	free(buff);
