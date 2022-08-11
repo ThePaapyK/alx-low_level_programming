@@ -30,11 +30,11 @@ int copyf(const char *file_from, const char *file_to)
 
 	buff = malloc(sizeof(file_from));
 
-	rd = read(fd, buff, 1024);
+	rd = read(fd, buff, INT_MAX);
 
 	if (rd == -1)
 		return (98);
-	wr = write(sd, buff, 1024);
+	wr = write(sd, buff, INT_MAX);
 	if (wr == -1)
 		return (99);
 
