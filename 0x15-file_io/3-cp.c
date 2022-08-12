@@ -18,12 +18,12 @@ int copyf(const char *file_from, const char *file_to)
 	if (!file_from)
 		return (98);
 
-	fd = open(file_from, O_RDWR);
-	sd = open(file_to, O_CREAT | O_EXCL | O_RDWR, 0664);
+	fd = open(file_from, O_RDONLY);
+	sd = open(file_to, O_CREAT | O_EXCL | O_WRONLY, 0664);
 
 	if (sd == -1)
 	{
-		sd = open(file_to, O_TRUNC | O_RDWR);
+		sd = open(file_to, O_TRUNC | O_WRONLY);
 		if (sd == -1)
 			return (99);
 	}
