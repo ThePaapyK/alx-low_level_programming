@@ -11,7 +11,7 @@
 int copyf(const char *file_from, const char *file_to)
 {
 	int fd, sd;
-	char *buff;
+	char buff[1024];
 	ssize_t wr, rd, cf, cs;
 
 
@@ -28,15 +28,17 @@ int copyf(const char *file_from, const char *file_to)
 			return (99);
 	}
 
-	buff = malloc(sizeof(file_from));
+	rd = 1024;
+	while (rd == 1024)
+	{
+		rd = read(fd, buff, 1024);
 
-	rd = read(fd, buff, INT_MAX);
-
-	if (rd == -1)
-		return (98);
-	wr = write(sd, buff, INT_MAX);
-	if (wr == -1)
-		return (99);
+		if (rd == -1)
+			return (98);
+		wr = write(sd, buff, rd);
+		if (wr == -1)
+			return (99);
+	}
 
 	cf = close(fd);
 	cs = close(sd);
@@ -45,7 +47,7 @@ int copyf(const char *file_from, const char *file_to)
 		return (100);
 	if (cs == -1)
 		return (100);
-	free(buff);
+
 	return (1);
 }
 
