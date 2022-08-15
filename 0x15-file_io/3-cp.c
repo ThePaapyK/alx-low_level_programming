@@ -20,7 +20,8 @@ int copyf(const char *file_from, const char *file_to)
 
 	fd = open(file_from, O_RDONLY);
 	sd = open(file_to, O_CREAT | O_EXCL | O_WRONLY, 0664);
-
+	if (fd == -1)
+		return (98);
 	if (sd == -1)
 	{
 		sd = open(file_to, O_TRUNC | O_WRONLY);
