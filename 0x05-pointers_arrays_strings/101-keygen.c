@@ -6,10 +6,9 @@ int main(void)
 {
 	int random;
 	int limit = 2772;
+	char char1[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/,.-+=~`<>:";
 
 	srand((unsigned int)(time(NULL)));
-
-	char char1[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/,.-+=~`<>:";
 
 	while (limit > 126)
 	{
