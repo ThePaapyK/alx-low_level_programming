@@ -4,10 +4,10 @@
 
 int main(void)
 {
-	srand((unsigned int)(time(NULL)));
 	int random;
-
 	int limit = 2772;
+
+	srand((unsigned int)(time(NULL)));
 
 	char char1[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/,.-+=~`<>:";
 
