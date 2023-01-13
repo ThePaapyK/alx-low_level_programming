@@ -44,24 +44,24 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 
 
-	if (cur_node == NULL)
+	if (ht->array[index] == NULL)
 	{
 		ht->array[index] = node;
 		return (1);
 	}
 
-	while (cur_node != NULL)
+	while (ht->array[index] != NULL)
 	{
-		if (strcmp(cur_node->key, key) == 0)
+		if (strcmp(ht->array[index]->key, key) == 0)
 		{
-			if (strcmp(cur_node->value, value) == 0)
+			if (strcmp(ht->array[index]->value, value) == 0)
 				return (1);
 			strcpy(ht->array[index]->value, value);
 			return (1);
 		}
-		cur_node = cur_node->next;
+		ht->array[index] = ht->array[index]->next;
 	}
-	if (cur_node == NULL)
+	if (ht->array[index] == NULL)
 	{
 		cur_node = node;
 		if (cur_node == NULL)
