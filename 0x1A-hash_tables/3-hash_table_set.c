@@ -6,7 +6,7 @@
  * Return: node created
  */
 
-hash_node_t *create_node(char *key, char *value)
+hash_node_t *create_node(const char *key, const char *value)
 {
 	hash_node_t *node = malloc(sizeof(hash_node_t));
 
