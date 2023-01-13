@@ -1,5 +1,5 @@
 #include "hash_tables.h"
-
+#include <stdlib.h>
 /**
  * create_node - creates the node to be added to the hash table
  * @key: key
@@ -35,6 +35,8 @@ hash_node_t *create_node(char *key, char *value)
 
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
+	hash_node_t *tmp;
+
 	hash_node_t *node = create_node(key, value);
 
 	if (node == NULL)
