@@ -52,6 +52,13 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	while (cur_node != NULL)
 	{
+		if (strcmp(cur_node->key, key) == 0)
+		{
+			if (strcmp(cur_node->value, value) == 0)
+				return (1);
+			strcpy(ht->array[index]->value, value);
+			return (1);
+		}
 		cur_node = cur_node->next;
 	}
 	if (cur_node == NULL)
