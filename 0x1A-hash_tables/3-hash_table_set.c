@@ -45,25 +45,23 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	if (node == NULL)
 		return (0);
-
-	if (ht->array[index] == NULL)
+	cur_node = ht->array[index];
+	if (cur_node == NULL)
 	{
 		ht->array[index] = node;
 		return (1);
 	}
-	while (ht->array[index] != NULL)
+	while (cur_node != NULL)
 	{
-		if (strcmp(ht->array[index]->key, key) == 0)
+		if (strcmp(cur_node->key, key) == 0)
 		{
-			if (strcmp(ht->array[index]->value, value) == 0)
+			if (strcmp(cur_node->value, value) == 0)
 				return (1);
-			strcpy(ht->array[index]->value, value);
+			strcpy(cur_node->value, value);
 			return (1);
 		}
-		ht->array[index] = ht->array[index]->next;
+		cur_node = cur_node->next;
 	}
-	cur_node = ht->array[index];
-
 	if (cur_node == NULL)
 	{
 		cur_node = node;
