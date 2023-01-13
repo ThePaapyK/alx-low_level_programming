@@ -12,10 +12,10 @@ hash_node_t *create_node(const char *key, const char *value)
 
 	if (node == NULL)
 		return (NULL);
-	node->key = malloc(strlen(key) + 1);
+	node->key = malloc(strlen(key));
 	if (node->key == NULL)
 		return (NULL);
-	node->value = malloc(strlen(value) + 1);
+	node->value = malloc(strlen(value));
 	if (node->value == NULL)
 		return (NULL);
 
