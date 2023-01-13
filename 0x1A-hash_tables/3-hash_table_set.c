@@ -36,13 +36,13 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	hash_node_t *tmp;
 
+	hash_table_t *table = ht;
+	unsigned long int index = key_index((unsigned char *)key, table->size);
 	hash_node_t *node = create_node(key, value);
+	hash_node_t *cur_node = table->array[index];
 
 	if (node == NULL)
 		return (0);
-	hash_table_t *table = ht;
-	unsigned long int index = key_index((unsigned char *)key, table->size)
-	hash_node_t *cur_node = table->array[index];
 
 	if (cur_node == NULL)
 	{
@@ -50,8 +50,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	}
 	else
 	{
-		tmp = table->(array[index])->next;
-		table->(array[index])->next = node;
+		tmp = table->array[index]->next;
+		table->array[index]->next = node;
 		if (tmp)
 			node->next = tmp;
 		else
