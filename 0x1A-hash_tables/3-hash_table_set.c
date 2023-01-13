@@ -15,7 +15,7 @@ hash_node_t *create_node(char *key, char *value)
 		return (NULL);
 	node->key = malloc(strlen(key) + 1);
 	if (node->key == NULL)
-		return (NULL)
+		return (NULL);
 	node->value = malloc(strlen(value) + 1);
 	if (node->value == NULL)
 		return (NULL);
