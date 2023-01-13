@@ -15,6 +15,9 @@ void hash_table_print(const hash_table_t *ht)
 	unsigned long int i, j;
 	hash_node_t **list, *item;
 
+	if (ht == NULL)
+		return;
+
 	i = 0;
 	j = 0;
 	list = ht->array;
