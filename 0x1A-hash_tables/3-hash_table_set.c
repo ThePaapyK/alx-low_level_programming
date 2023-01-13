@@ -43,6 +43,9 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	if (node == NULL)
 		return (0);
+	if (ht == NULL || key == NULL || value == NULL)
+		return (0);
+
 
 	if (cur_node == NULL)
 	{
